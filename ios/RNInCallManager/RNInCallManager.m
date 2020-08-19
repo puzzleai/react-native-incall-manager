@@ -563,7 +563,7 @@ RCT_EXPORT_METHOD(getIsWiredHeadsetPluggedIn:(RCTPromiseResolveBlock)resolve
         overrideAudioPortString = @".Speaker";
         if ([_media isEqualToString:@"video"]) {
             audioMode = AVAudioSessionModeVideoChat;
-            [self stopProximitySensor];
+            // [self stopProximitySensor];
         }
     } else if (_forceSpeakerOn == -1) {
         // --- force off
@@ -571,14 +571,14 @@ RCT_EXPORT_METHOD(getIsWiredHeadsetPluggedIn:(RCTPromiseResolveBlock)resolve
         overrideAudioPortString = @".None";
         if ([_media isEqualToString:@"video"]) {
             audioMode = AVAudioSessionModeVoiceChat;
-            [self startProximitySensor];
+            // [self startProximitySensor];
         }
     } else { // use default behavior
         overrideAudioPort = AVAudioSessionPortOverrideNone;
         overrideAudioPortString = @".None";
         if ([_media isEqualToString:@"video"]) {
             audioMode = AVAudioSessionModeVideoChat;
-            [self stopProximitySensor];
+            // [self stopProximitySensor];
         }
     }
 
